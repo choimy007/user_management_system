@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('user_list') }}" title="user_list">User List</a></li>
+        <li><a href="{{ path('user_create') }}" title="user_list">Create User</a></li>
+        <li><a href="{{ path('group_list') }}" title="group_list">Group List</a></li>
+        <li class="active">Create Group</li>
+    </ol>
+
+    <h2 class="page-header">Add Group</h2>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}

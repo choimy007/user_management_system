@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\User;
 
 class DefaultController extends Controller
 {
@@ -13,9 +14,12 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        // find all users listed ascending by id
+        $users = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array(), array('id' => 'ASC'));
+
+        // pass them over to view to render
+        return $this->render('user/index.html.twig', array(
+            'users' => $users
+        ));
     }
 }

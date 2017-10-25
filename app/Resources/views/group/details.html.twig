@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <ol class="breadcrumb">
+        <li><a href="{{ path('user_list') }}" title="user_list">User List</a></li>
+        <li><a href="{{ path('user_create') }}" title="user_create">Create User</a></li>
+        <li><a href="{{ path('group_list') }}" title="group_list">Group List</a></li>
+        <li><a href="{{ path('group_create') }}" title="group_create">Create Group</a></li>
+        <li class="active">Details</li>
+    </ol>
+
+    <h2 class="page-header">{{ group.name }}</h2>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+        </thead>
+        <tbody>
+
+    {% if group.members is defined %}
+        {% for member in members %}
+        <tr>
+            <th scope="row">{{ member[0] }}</th>
+            <td>{{ member[1] }}</td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        No
+    {% endif %}
+    </tbody>
+    </table>
+
+{% endblock %}
