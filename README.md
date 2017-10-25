@@ -2,8 +2,11 @@
 
 A Symfony project created on October 21, 2017, 6:59 pm.
 My first time learning PHP! It was quite a struggle just setting up mysql and getting it connected.
+
 I got considerable insights from this repo:
+
 https://github.com/andreafiori/symfony-3-todo-list
+
 Thank you, kind stranger! ᕕ( ᐛ )ᕗ
 
 ## Features
@@ -33,6 +36,7 @@ It's ugly and I don't like it, but an hour of searching turned up nothing useful
 Regarding adding users to the group, I fiddled around for 2 hours trying to make a nice list of users not in the group and giving checkboxes for easy addition. I created an array to pass into a Form to generate a checklist of sorts, but I could not find a way to pass in an array into a FormType. 
 
 It seems like you can embed a collection of forms: https://symfony.com/doc/current/form/form_collections.html
+
 I initially thought this was out of scope for what I wanted and didn't investigate, but it might be what I need.
 
 Another idea I have is to create a separate page with listings of non members of a group, and creating another controller function to add to the group if clicked on the user interface. 
